@@ -9,9 +9,9 @@ public class ElevatorButton {
 private int status;
 private int floor;
 
-ElevatorButton(){
+ElevatorButton(int pfloor){
     status = 0; //0 = off 1 = on
-    floor = 1;
+    floor = pfloor;
 }
 
 public int getStatus(){

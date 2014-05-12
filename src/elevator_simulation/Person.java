@@ -6,11 +6,13 @@ private int personID;
 private int startFloor;
 private int endFloor;
 private int timeStart;
+private int endTime;
 
-Person(int personID, int start, int end){
+Person(int personID, int start, int end, int tStart){
     this.personID = personID;
     this.startFloor = start;
     this.endFloor = end;
+    this.timeStart = tStart;
     //timestart will take current time from clock clas
 }
 

@@ -18,7 +18,11 @@ public void reset(){
 }
 
 public void tick(){
-    currentTime+=1;
+    currentTime++;
+}
+
+public int getTime(){
+    return currentTime;
 }
 
 }

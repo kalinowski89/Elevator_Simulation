@@ -1,16 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package elevator_simulation;
 
-import java.util.Random;
-import javax.swing.*;
-
-/**
- *
- * @author Alex
- */
 public class Elevator_Simulation {
 
     /**

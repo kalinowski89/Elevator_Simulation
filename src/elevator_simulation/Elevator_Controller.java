@@ -15,11 +15,26 @@ public class Elevator_Controller {
     public Elevator_Controller(){
         
     }
-    public void moveUP(){
-        
+    public boolean goingUp(Elevator e){
+        for(int i = 0; i<Config.numFloors; i++){
+         if(e.buttons[i].getStatus() == 1){
+             if(e.getFloor()<e.buttons[i].getFloor()){
+                 return true;
+                }
+            }
+        }
+        return false;
     }
     
-    public void moveDown(){
+    public boolean goingDown(Elevator e){
         
+    for(int i = 0; i<Config.numFloors; i++){
+         if(e.buttons[i].getStatus() == 1){
+            if(e.getFloor()>e.buttons[i].getFloor()){
+                return true;
+             }
+         }
+    }
+        return false;
     }
 }

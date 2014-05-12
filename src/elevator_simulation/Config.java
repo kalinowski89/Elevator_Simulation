@@ -4,19 +4,30 @@
  */
 package elevator_simulation;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
 
 public class Config {
-private int numFloors;
-private int numElevators;
-private int numPeople;
+public static int numFloors;
+public static int numElevators;
+public static int numPeople;
+public static Clock clock = new Clock();
 
 Config(){
-    numFloors = 1;
-    numElevators = 1;
+        String response = JOptionPane.showInputDialog("Enter number of Floors");
+        int floors = Integer.parseInt(response);
+        numFloors = floors;
+        response = JOptionPane.showInputDialog("Enter number of Elevators");
+        int elevators = Integer.parseInt(response);
+        numElevators = elevators;
+        
 }
 
 public void initialize(){
-    
+
 }
 public int getNumFloors(){
     return numFloors;

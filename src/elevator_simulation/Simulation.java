@@ -19,18 +19,24 @@ import javax.swing.JOptionPane;
 void run()
 {       boolean done = false;//however you are deciding to end
         Config config = new Config();
-        String response = JOptionPane.showInputDialog("Enter number of Floors");
-        int floors = Integer.parseInt(response);
-        config.setNumFloors(floors);
-        response = JOptionPane.showInputDialog("Enter number of Elevators");
-        int elevators = Integer.parseInt(response);
-        config.setNumElevators(elevators);
- 
-        Building building = new Building (config.getNumFloors(),config.getNumElevators());//instantiate the building of a given number of floors
+        Building building = new Building (Config.numFloors,config.numElevators);//instantiate the building of a given number of floors
         PersonGenerator personGenerator = new PersonGenerator();
+        Window window = new Window();
+        window.setVisible(true);
        //GUIDisplay SimDusplay = new GUIDisplay();
 //main loop
-
+         
+        do{
+          if(personGenerator.shouldMakePerson()==true){
+              Person person = personGenerator.createPerson();
+              building.addPerson(person);///
+          }
+          building.moveElevator();//Buidling will decide where elevator goes, move it,
+          //get people on & off
+          //decide if you should continue
+          
+          config.clock.tick();
+        } while (!done);//end while(!done)
          
 }             
 }
